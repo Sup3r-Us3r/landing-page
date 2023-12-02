@@ -1,8 +1,5 @@
 import Link from 'next/link';
 
-const imageURL =
-  'https://img.freepik.com/fotos-gratis/reciclar-fundo-com-aquarela-de-ideia-sustentavel-de-suporte-de-mao_53876-108705.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699574400&semt=ais';
-
 const Dashboard = () => {
   return (
     <div className="max-w-7xl mt-28 mx-auto">
@@ -12,12 +9,6 @@ const Dashboard = () => {
       </section>
 
       <section className="flex flex-col mt-12">
-        {/* <img
-          className="w-full h-[50vh] object-cover"
-          src={imageURL}
-          alt="renascer"
-        /> */}
-
         <iframe
           className="w-full h-[50vh]"
           src="https://nextjs.org/"
