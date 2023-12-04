@@ -1,16 +1,25 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
-
-const imageURL =
-  'https://img.freepik.com/fotos-gratis/reciclar-fundo-com-aquarela-de-ideia-sustentavel-de-suporte-de-mao_53876-108705.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699574400&semt=ais';
+import { FormEvent, useState } from 'react';
 
 const Home = () => {
   const [name, setName] = useState<string>('');
   const [number, setNumber] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
+
+  function submitForm(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    if (name === '' || number === '' || email === '' || message === '') {
+      window.alert('Todos os campos são obrigatórios!');
+
+      return;
+    }
+
+    window.alert('Mensagem enviada!');
+  }
 
   return (
     <div className="max-w-7xl mx-auto mb-28">
@@ -35,7 +44,7 @@ const Home = () => {
 
         <img
           className="w-[770px] h-[829px] object-cover"
-          src={imageURL}
+          src="/assets/images/1.jpeg"
           alt="renascer"
         />
       </section>
@@ -45,19 +54,19 @@ const Home = () => {
           <div className="flex flex-col gap-12">
             <img
               className="w-[270px] h-[265px] object-cover"
-              src={imageURL}
+              src="/assets/images/2.jpeg"
               alt="renascer"
             />
             <img
               className="w-[270px] h-[140px] object-cover"
-              src={imageURL}
+              src="/assets/images/3.jpeg"
               alt="renascer"
             />
           </div>
 
           <img
             className="w-[270px] h-[345px] object-cover"
-            src={imageURL}
+            src="/assets/images/6.jpeg"
             alt="renascer"
           />
         </div>
@@ -128,12 +137,12 @@ const Home = () => {
           <div className="flex gap-12 w-full">
             <img
               className="flex-1 h-60 object-cover"
-              src={imageURL}
+              src="/assets/images/1.jpeg"
               alt="renascer"
             />
             <img
               className="flex-1 h-60 object-cover"
-              src={imageURL}
+              src="/assets/images/2.jpeg"
               alt="renascer"
             />
           </div>
@@ -141,17 +150,17 @@ const Home = () => {
           <div className="flex gap-12 w-full">
             <img
               className="flex-1 h-60 object-cover"
-              src={imageURL}
+              src="/assets/images/3.jpeg"
               alt="renascer"
             />
             <img
               className="flex-1 h-60 object-cover"
-              src={imageURL}
+              src="/assets/images/4.jpeg"
               alt="renascer"
             />
             <img
               className="flex-1 h-60 object-cover"
-              src={imageURL}
+              src="/assets/images/5.jpeg"
               alt="renascer"
             />
           </div>
@@ -162,7 +171,7 @@ const Home = () => {
         <h1 className="font-light text-6xl text-gray-300">Fale conosco</h1>
 
         <div className="flex justify-between w-full items-center mt-12 gap-12">
-          <form className="flex flex-col gap-2">
+          <form onSubmit={submitForm} className="flex flex-col gap-2">
             <input
               className="h-12 w-96 bg-gray-100 p-4 rounded"
               type="text"
@@ -190,19 +199,22 @@ const Home = () => {
               onChange={event => setMessage(event.target.value)}
               value={message}
             />
+
+            <button
+              type="submit"
+              className="mt-12 bg-gray-800 font-light text-xs tracking-[0.125rem] text-white w-56 h-[72px] hover:bg-gray-800 transition-colors"
+            >
+              ENVIAR
+              <span className="ml-8">→</span>
+            </button>
           </form>
 
           <img
-            className="w-full h-72 object-cover"
-            src={imageURL}
+            className="w-full h-72 object-cover -mt-32"
+            src="https://img.freepik.com/fotos-premium/fale-conosco-suporte-ao-cliente-linha-direta-pessoal-conecte-ligue-para-o-suporte-ao-clientexa_36325-4354.jpg"
             alt="renascer"
           />
         </div>
-
-        <button className="mt-12 bg-gray-800 font-light text-xs tracking-[0.125rem] text-white w-56 h-[72px] hover:bg-gray-800 transition-colors">
-          ENVIAR
-          <span className="ml-8">→</span>
-        </button>
       </section>
     </div>
   );
