@@ -10,11 +10,12 @@ const Dashboard = () => {
 
       <section className="flex flex-col mt-12">
         <iframe
-          className="w-full h-[50vh]"
-          src="https://nextjs.org/"
-          title="Dashboard Power BI"
+          className="w-full h-screen"
+          title="Report Section"
+          src="https://app.powerbi.com/view?r=eyJrIjoiNzI5MWEwOWQtMWM4MC00ZTY1LTk4YmMtMTEyZDIxMDg3NDg1IiwidCI6IjE0Y2JkNWE3LWVjOTQtNDZiYS1iMzE0LWNjMGZjOTcyYTE2MSIsImMiOjh9"
+          frameBorder="0"
           allowFullScreen
-        />
+        ></iframe>
 
         <Link
           href="/"
